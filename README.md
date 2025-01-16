@@ -23,7 +23,7 @@ This is a simple network packet sniffer application built with **Flask** and **S
 - Flask
 - Scapy
 - Threading
-- Chart.js (for real-time graphing)
+
 
 To install the necessary Python dependencies, use the following command:
 
