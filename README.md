@@ -33,10 +33,12 @@ pip install flask scapy
 ## Running the Application
 
 To run the packet sniffer application, follow these steps:
-
+```
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/yourusername/network_packet_sniffer.git
    cd network_packet_sniffer
+2. Run the application:
+   ```bash
     python app.py
