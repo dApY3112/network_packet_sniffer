@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packet Sniffer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Network Packet Sniffer Dashboard</h1>
+    
+        <!-- Filter Form -->
+        <div class="filter">
+            <h2>Filter Packets</h2>
+            <form action="/" method="POST">
+                <label for="ip">IP Address:</label>
+                <input type="text" id="ip" name="ip" value="{{ filter['ip'] }}">
+                <label for="protocol">Protocol:</label>
+                <select name="protocol" id="protocol">
+                    <option value="">All</option>
+                    <option value="ARP" {% if filter['protocol'] == 'ARP' %} selected {% endif %}>ARP</option>
+                    <option value="TCP" {% if filter['protocol'] == 'TCP' %} selected {% endif %}>TCP</option>
+                    <option value="UDP" {% if filter['protocol'] == 'UDP' %} selected {% endif %}>UDP</option>
+                </select>
+                <button type="submit">Apply Filter</button>
+            </form>
+        </div>
+    
+        <!-- Traffic Statistics -->
+        <div class="stats">
+            <h2>Traffic Statistics</h2>
+            <p>Total Packets: {{ stats['total'] }}</p>
+            <p>ARP Packets: {{ stats['arp'] }}</p>
+            <p>TCP Packets: {{ stats['tcp'] }}</p>
+            <p>UDP Packets: {{ stats['udp'] }}</p>
+        </div>
+    
+        <!-- Suspicious Activity Logs -->
+        <div class="logs">
+            <h2>Suspicious Activity</h2>
+            <ul>
+                {% for activity in suspicious %}
+                    <li>{{ activity }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    </body>
+</html>
