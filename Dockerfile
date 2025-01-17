@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /
 
 # Copy application files
 COPY . .
@@ -14,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8080
 
 # Command to run the application
-CMD ["python", "packet_sniffer.py"]
+CMD ["python", "app.py"]
