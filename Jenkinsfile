@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment {
         IMAGE_NAME = 'network_packet_sniffer'
-        REGISTRY = 'ghcr.io/your-github-username/network_packet_sniffer'
-        GITHUB_USER = '<your-github-username>'
+        REGISTRY = 'github.com/dApY3112/network_packet_sniffer'
+        GITHUB_USER = 'dApY3112'
         GITHUB_TOKEN = credentials('github-token') // Store your PAT in Jenkins
     }
     stages {
