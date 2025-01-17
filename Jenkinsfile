@@ -2,7 +2,9 @@ pipeline {
     agent any
     environment {
         IMAGE_NAME = 'network_packet_sniffer'
-        REGISTRY = 'yourdockerhubusername/network_packet_sniffer'
+        REGISTRY = 'dapy3112/network_packet_sniffer'
+        DOCKER_USER = 'dapy3112'
+        DOCKER_PASS = 'NTN.Dapy3112'
     }
     stages {
         stage('Checkout Code') {
