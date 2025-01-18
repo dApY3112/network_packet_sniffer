@@ -35,6 +35,7 @@ pipeline {
                 sh 'zap-cli quick-scan http://localhost:8080'
             }
         }
+    }
     post {
         always {
             echo 'Pipeline Completed'
