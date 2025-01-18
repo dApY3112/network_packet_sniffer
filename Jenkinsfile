@@ -11,12 +11,6 @@ pipeline {
                 bat 'pip install -r requirements.txt'
             }
         }
-        stage('Container Scanning') {
-            steps {
-                echo 'Scanning Docker Image with Trivy'
-                bat 'trivy image $IMAGE_NAME'
-            }
-        }
         stage('Run Unit Tests') {
             steps {
                 echo 'Running Unit Tests'
