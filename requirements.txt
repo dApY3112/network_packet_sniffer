@@ -1,4 +1,7 @@
-scapy
-flask
-matplotlib
-pytest
+Flask==2.0.3
+Flask-SocketIO==5.1.1
+scapy==2.4.5
+python-socketio[client]==5.4.0
+eventlet==0.33.0
+matplotlib==3.4.3
+pytest==6.2.5
